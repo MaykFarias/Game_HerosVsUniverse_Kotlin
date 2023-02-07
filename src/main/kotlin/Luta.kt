@@ -1,6 +1,6 @@
 import Heroi
 class Luta {
-    private var escolhaHeroi: JHeroi1? = null
+    private var escolhaHeroi: Heroi1? = null
     private var escolhaVilao: Vilao? = null
     private var escolhaRounds = 0
     private var numeroGolpeHeroi: IntensidadeAtaque? = null
@@ -10,7 +10,7 @@ class Luta {
     private var defesaHeroi = false
     private var defesaVilao = false
 
-    fun opcoesPersonagensHeroi(l1: Heroi1?, l2: Heroi?, l3: Heroi) {
+    fun opcoesPersonagensHeroi(l1: Heroi1?, l2: Heroi1?, l3: Heroi1) {
         println(" -------------------------------")
         println("|        JOGO DOS HEROIS       |")
         println(" -------------------------------")
@@ -18,8 +18,8 @@ class Luta {
             println("[$contador] ")
             when (contador) {
                 1 -> l1?.apresentar()
-                2 -> l2?.apresentar()
-                3 -> l3?.apresentar()
+                2 -> l1?.apresentar()
+                3 -> l1?.apresentar()
                 else -> {}
             }
         }
