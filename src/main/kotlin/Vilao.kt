@@ -1,2 +1,2 @@
-class Vilao(no: String?, cat: String?, vi: Int, vit: Int, de: Int, em: Int) :
-    Personagem(no!!, cat!!, vi, vit, de, em)
+class Vilao(nome: String?, categoria: String?, vida: Int, vitoria: Int, derrota: Int, empate: Int) :
+    Personagem(nome!!, categoria!!, vida, vitoria, derrota, empate)

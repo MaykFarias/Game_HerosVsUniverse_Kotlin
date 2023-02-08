@@ -18,7 +18,7 @@ class Luta {
             when (contador) {
                 1 -> l1?.apresentar()
                 2 -> l2?.apresentar()
-                3 -> l3?.apresentar()
+                3 -> l3.apresentar()
                 else -> {}
             }
         }
@@ -42,7 +42,7 @@ class Luta {
 
     fun opcoesPersonagensVilao(o1: Vilao, o2: Vilao, o3: Vilao) {
         println("O COMPUTADOR VAI ESCOLHER O SEU OPONENTE !")
-        val randomm = (0..10).random()
+        val randomm = (0..2).random()
         when (randomm + 1) {
             1 -> {
                 escolhaVilao = o1
@@ -84,23 +84,23 @@ class Luta {
     private fun escolhaAtaqueHeroi() {
         println("==================================")
         println(
-            " [1] ATAQUE FRACO " +
-                    "[2] ATAQUE FORTE" +
-                    "[3] ATAQUE CRITICO" +
-                    "[4] DEFESA "
+            "[1] ATAQUE FRACO \n" +
+                    "[2] ATAQUE FORTE\n" +
+                    "[3] ATAQUE CRITICO\n" +
+                    "[4] DEFESA \n"
         )
         println("==================================")
         println("= QUAL O SEU COMANDO ?           =")
         print("=   -----> ")
-        var escolha = readLine()!!.toInt()
+        val escolha = readLine()!!.toInt()
         numeroGolpeHeroi = IntensidadeAtaque.converterOpcao(escolha)
         println("==================================")
         println(numeroGolpeHeroi)
     }
 
     private fun escolhaAtaqueVilao() {
-        var aleatorio = (0..2).random()
-        var escolha = aleatorio + 1
+        val aleatorio = (0..2).random()
+        val escolha = aleatorio + 1
         numeroGolpeVilao = IntensidadeAtaque.converterOpcao(escolha)
         println(numeroGolpeVilao)
     }
