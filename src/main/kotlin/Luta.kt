@@ -1,6 +1,5 @@
-import Heroi
 class Luta {
-    private var escolhaHeroi: Heroi1? = null
+    private var escolhaHeroi: Heroi? = null
     private var escolhaVilao: Vilao? = null
     private var escolhaRounds = 0
     private var numeroGolpeHeroi: IntensidadeAtaque? = null
@@ -10,7 +9,7 @@ class Luta {
     private var defesaHeroi = false
     private var defesaVilao = false
 
-    fun opcoesPersonagensHeroi(l1: Heroi1?, l2: Heroi1?, l3: Heroi1) {
+    fun opcoesPersonagensHeroi(l1: Heroi?, l2: Heroi?, l3: Heroi) {
         println(" -------------------------------")
         println("|        JOGO DOS HEROIS       |")
         println(" -------------------------------")
@@ -18,8 +17,8 @@ class Luta {
             println("[$contador] ")
             when (contador) {
                 1 -> l1?.apresentar()
-                2 -> l1?.apresentar()
-                3 -> l1?.apresentar()
+                2 -> l2?.apresentar()
+                3 -> l3?.apresentar()
                 else -> {}
             }
         }
@@ -30,9 +29,11 @@ class Luta {
             1 -> {
                 escolhaHeroi = l1
             }
+
             2 -> {
                 escolhaHeroi = l2
             }
+
             3 -> {
                 escolhaHeroi = l3
             }
@@ -46,9 +47,11 @@ class Luta {
             1 -> {
                 escolhaVilao = o1
             }
+
             2 -> {
                 escolhaVilao = o2
             }
+
             3 -> {
                 escolhaVilao = o3
             }
@@ -89,15 +92,15 @@ class Luta {
         println("==================================")
         println("= QUAL O SEU COMANDO ?           =")
         print("=   -----> ")
-        val escolha = readLine()!!.toInt()
+        var escolha = readLine()!!.toInt()
         numeroGolpeHeroi = IntensidadeAtaque.converterOpcao(escolha)
         println("==================================")
         println(numeroGolpeHeroi)
     }
 
     private fun escolhaAtaqueVilao() {
-        val aleatorio = (0..2).random()
-        val escolha = aleatorio + 1
+        var aleatorio = (0..2).random()
+        var escolha = aleatorio + 1
         numeroGolpeVilao = IntensidadeAtaque.converterOpcao(escolha)
         println(numeroGolpeVilao)
     }
@@ -112,16 +115,19 @@ class Luta {
                     "Médio" -> 20
                     else -> 10
                 }
+
                 IntensidadeAtaque.ATAQUE_FORTE -> ataqueHeroi = when (escolhaHeroi?.categoria) {
                     "Leve" -> 40
                     "Médio" -> 30
                     else -> 20
                 }
+
                 IntensidadeAtaque.ATAQUE_CRITICO -> ataqueHeroi = when (escolhaHeroi?.categoria) {
                     "Leve" -> 50
                     "Médio" -> 40
                     else -> 30
                 }
+
                 IntensidadeAtaque.DEFESA -> {
                     if (numeroGolpeHeroi === IntensidadeAtaque.DEFESA && numeroGolpeVilao === IntensidadeAtaque.DEFESA) {
                         println("Os dois se defenderam")
@@ -137,6 +143,7 @@ class Luta {
                         defesaVilao = true
                     }
                 }
+
                 else -> println("ERRO")
             }
         }
@@ -152,16 +159,19 @@ class Luta {
                     "Médio" -> 20
                     else -> 30
                 }
+
                 IntensidadeAtaque.ATAQUE_FORTE -> ataqueVilao = when (escolhaVilao?.categoria) {
                     "Leve" -> 10
                     "Médio" -> 20
                     else -> 40
                 }
+
                 IntensidadeAtaque.ATAQUE_CRITICO -> ataqueVilao = when (escolhaVilao?.categoria) {
                     "Leve" -> 10
                     "Médio" -> 20
                     else -> 50
                 }
+
                 IntensidadeAtaque.DEFESA -> {
                     if (numeroGolpeHeroi === IntensidadeAtaque.DEFESA && numeroGolpeVilao === IntensidadeAtaque.DEFESA) {
                         println("Os dois se defenderam")
@@ -177,6 +187,7 @@ class Luta {
                         defesaVilao = true
                     }
                 }
+
                 else -> println("ERRO")
             }
         }

@@ -1,18 +1,7 @@
 open class Personagem(
     var nome: String, var categoria: String,
-    var vida: Int, var vit: Int, var de: Int, var em: Int
+    var vida: Int, var vitorias: Int, var derrotas: Int, var empates: Int
 ) {
-
-    var vitorias: Int
-    var derrotas: Int
-    var empates: Int
-
-    init {
-        vida = vida
-        vitorias = vit
-        derrotas = de
-        empates = em
-    }
 
     fun apresentar() {
         //System.out.println("--------------------------");
