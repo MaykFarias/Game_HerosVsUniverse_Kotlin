@@ -9,16 +9,17 @@ class Luta {
     private var defesaHeroi = false
     private var defesaVilao = false
 
-    fun opcoesPersonagensHeroi(l1: Heroi?, l2: Heroi?, l3: Heroi) {
+    fun opcoesPersonagensHeroi(h1: Heroi, h2: Heroi, h3: Heroi, h4: Heroi) {
         println(" -------------------------------")
         println("|        JOGO DOS HEROIS       |")
         println(" -------------------------------")
-        for (contador in 1..3) {
+        for (contador in 1..4) {
             println("[$contador] ")
             when (contador) {
-                1 -> l1?.apresentar()
-                2 -> l2?.apresentar()
-                3 -> l3.apresentar()
+                1 -> h1.apresentar()
+                2 -> h2.apresentar()
+                3 -> h3.apresentar()
+                4 -> h4.apresentar()
                 else -> {}
             }
         }
@@ -27,33 +28,39 @@ class Luta {
         print("---> ")
         when (readLine()!!.toInt()) {
             1 -> {
-                escolhaHeroi = l1
+                escolhaHeroi = h1
             }
 
             2 -> {
-                escolhaHeroi = l2
+                escolhaHeroi = h2
             }
 
             3 -> {
-                escolhaHeroi = l3
+                escolhaHeroi = h3
+            }
+            4 -> {
+                escolhaHeroi = h4
             }
         }
     }
 
-    fun opcoesPersonagensVilao(o1: Vilao, o2: Vilao, o3: Vilao) {
+    fun opcoesPersonagensVilao(v1: Vilao, v2: Vilao, v3: Vilao, v4: Vilao) {
         println("O COMPUTADOR VAI ESCOLHER O SEU OPONENTE !")
-        val randomm = (0..2).random()
+        val randomm = (0..3).random()
         when (randomm + 1) {
             1 -> {
-                escolhaVilao = o1
+                escolhaVilao = v1
             }
 
             2 -> {
-                escolhaVilao = o2
+                escolhaVilao = v2
             }
 
             3 -> {
-                escolhaVilao = o3
+                escolhaVilao = v3
+            }
+            4 -> {
+                escolhaVilao = v4
             }
         }
     }
